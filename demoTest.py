@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.common.action_chains import ActionChains
 import threading
 import time
 driver = webdriver.Chrome("Drivers/chromedriver.exe")
@@ -63,10 +64,36 @@ def handleJSAlert(nameToDisplay,alertDecision):
     else:
         return alertDecision," decision is invalid on alert"
     return "Alert accepted"
+def handleMouseHover(optionToSelect):
+    mouseOverBtn = driver.find_element_by_id("mousehover")
+    action = ActionChains(driver)
+    action.move_to_element(driver.find_element_by_id("mousehover")).perform()
+    if str(optionToSelect).lower() == "top":
+        tempCounter = 1
+    elif str(optionToSelect).lower() == "reload":
+        tempCounter = 2
+    else:
+        return "Given option is invalid"
+    action.move_to_element(driver.find_element_by_xpath("//div[@class='mouse-hover-content']/a["+str(tempCounter)+"]")).click().perform()
+    return "Selected"+str(optionToSelect)
+def footerIterations():
+    footerParent = driver.find_element_by_id("gf-BIG")
+    totalCategories = driver.find_elements_by_xpath("//div[@id='gf-BIG']/table/tbody/tr/td")
+    print("There are "+str(len(totalCategories))+" categories in footer")
+    mainList = []
+    for i in range(1,len(totalCategories)+1):
+        categoryName = driver.find_element_by_xpath("//div[@id='gf-BIG']/table/tbody/tr/td[" + str(i) + "]/ul/li/h3/a")
+        underCategoryLists = driver.find_elements_by_xpath("//div[@id='gf-BIG']/table/tbody/tr/td[" + str(i) + "]/ul/li")
+        print("Under "+str(categoryName.text+" there are "+str(len(underCategoryLists))+" items"))
+        for j in range(2, len(underCategoryLists)+1):
+            category = driver.find_element_by_xpath("//div[@id='gf-BIG']/table/tbody/tr/td[" + str(i) + "]/ul/li["+str(j)+"]/a")
+            mainList.append(category.text)
+    return mainList
 print("Total number of instructors whose name is 'Rahul Shetty' is:'", tableFindInstructor("Rahul Shetty"))
 print("Total price of all the available courses present is: ",tableTotalCoursePrice())
 print("Value selected from the dropdown is: ",selectDropDown("Option2"))
 print("Radio button option selected was: ",selectRadioButton("Radio2"))
 print("Switch to a new window and got the URL: ", windowHandle())
-print("Accept JS alert shown on screen:",handleJSAlert("HAI","accept"))
-
+print("Handled JS alert shown on screen:",handleJSAlert("HAI","accept"))
+print("Handled move hover and selected :",handleMouseHover("Top"))
+print("Read all categories from footer of the page:",footerIterations())
