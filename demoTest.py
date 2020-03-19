@@ -89,6 +89,9 @@ def footerIterations():
             category = driver.find_element_by_xpath("//div[@id='gf-BIG']/table/tbody/tr/td[" + str(i) + "]/ul/li["+str(j)+"]/a")
             mainList.append(category.text)
     return mainList
+def handleiFrames():
+    driver.switch_to.frame(driver.find_element_by_id("courses-iframe"))
+
 print("Total number of instructors whose name is 'Rahul Shetty' is:'", tableFindInstructor("Rahul Shetty"))
 print("Total price of all the available courses present is: ",tableTotalCoursePrice())
 print("Value selected from the dropdown is: ",selectDropDown("Option2"))
