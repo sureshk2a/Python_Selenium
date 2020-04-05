@@ -33,6 +33,12 @@ def takeScreenshot(fileNameToSave):
         driver.save_screenshot("Screenshots/"+str(fileNameToSave)+str(time.time())+".png")
     except Exception as e:
         print(e.with_traceback())
+def gotToPage(nameOfPage):
+    pages = driver.find_elements_by_xpath("//div[@id='content']/ul/li")
+    for i in range(1,len(pages)+1):
+        pageNavigator = driver.find_element_by_xpath("//div[@id='content']/ul/li["+str(i)+"]/a")
+        if pageNavigator.text == nameOfPage:
+            pageNavigator.click()
 def addOrRemoveElement():
     driver.find_element_by_xpath("//div[@id='content']/ul/li[2]/a").click()
     WebDriverWait(driver,timeout).until(expected_conditions.url_contains("add_remove_elements"))
@@ -95,6 +101,8 @@ def highlightAnElement():
     driver.execute_script("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');",element)
     takeScreenshot("highlight")
     return "Heading highlighted"
+def handleIFrameEditor():
+    gotToPage("WYSIWYG Editor")
 print("Handle Add and remove control: ",addOrRemoveElement())
 print("Handle context click: ",handleContextClick())
 print("Handle JS Authentication: ",handleAuthentication("admin","admin"))
@@ -103,4 +111,5 @@ print("Select given value from dropdown: ",handleDropDown("Option 1"))
 #print("Download all files listed in the page",handleFileDownload())
 print("Upload a file: ",handleFileUpload())
 print("Highlight the heading: ",highlightAnElement())
+print("Handle Editor inside iFrame: ",handleIFrameEditor())
 driver.close()
