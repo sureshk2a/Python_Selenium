@@ -5,7 +5,7 @@ from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.action_chains import ActionChains
 import threading
 import time
-driver = webdriver.Chrome("Drivers/chromedriver.exe")
+driver = webdriver.Chrome("../Drivers/chromedriver.exe")
 driver.implicitly_wait(20)
 driver.get("https://www.rahulshettyacademy.com/AutomationPractice/")
 driver.maximize_window()

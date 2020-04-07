@@ -18,7 +18,7 @@ import datetime as dt
 chome_Options.add_argument("--headless")
 chome_Options.add_argument("--disable-notifications")
 driver = webdriver.Chrome(chrome_options=chome_Options,executable_path= "Drivers/chromedriver.exe")'''
-driver = webdriver.Chrome("Drivers/chromedriver.exe")
+driver = webdriver.Chrome("../Drivers/chromedriver.exe")
 driver.implicitly_wait(20)
 driver.delete_all_cookies()
 driver.get("http://the-internet.herokuapp.com/")

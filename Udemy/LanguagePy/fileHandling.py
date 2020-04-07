@@ -1,11 +1,11 @@
 file_toOpen = "sample.txt"
-file = open(file_toOpen)
+file_toWrite = "writeFile.txt"
 # line = file.readline()
 # while line != "":
 #     print(line)
 #     line = file.readline()
-for line in file.readlines():
-    print(line)
-file.close()
-with open(file_toOpen) as file1:
-    print(file1.read())
+with open(file_toOpen,'r') as file1:
+    content = file1.readlines()
+    with open(file_toWrite,'w') as file2:
+        for line in reversed(content):
+            file2.write(line)
