@@ -17,6 +17,6 @@ def dataLoad():
     return ["Rahul", "Shetty", "rahulshetty.com"]
 
 
-@pytest.fixture(params=["chrome", "firefox"])
+@pytest.fixture(params=[("chrome","Suresh"), ("firefox","Kumar"), "IE"])
 def crossBrowser(request):
     return request.param
