@@ -1,0 +1,27 @@
+2020-04-26 17:26:37,229 :INFO : test_e2e : Navigated to products page
+2020-04-26 17:26:37,245 :INFO : test_e2e : Got all products displayed
+2020-04-26 17:26:42,903 :INFO : test_e2e : Clicked purchase the product button
+2020-04-26 17:30:06,450 :INFO : test_formSubmission : Entered first name as: Suresh
+2020-04-26 17:30:06,514 :INFO : test_formSubmission : Entered password as: adef
+2020-04-26 17:30:06,601 :INFO : test_formSubmission : Entered emailID as: s@gmail.com
+2020-04-26 17:30:07,089 :INFO : test_formSubmission : Entered first name as: Kumar
+2020-04-26 17:30:07,089 :INFO : test_formSubmission : Entered first name as: Kumar
+2020-04-26 17:30:07,162 :INFO : test_formSubmission : Entered password as: das@31
+2020-04-26 17:30:07,162 :INFO : test_formSubmission : Entered password as: das@31
+2020-04-26 17:30:07,250 :INFO : test_formSubmission : Entered emailID as: s@gmail.com
+2020-04-26 17:30:07,250 :INFO : test_formSubmission : Entered emailID as: s@gmail.com
+2020-04-26 17:38:09,549 :INFO : test_formSubmission : Entered first name as: Suresh
+2020-04-26 17:38:09,612 :INFO : test_formSubmission : Entered password as: adef
+2020-04-26 17:38:09,697 :INFO : test_formSubmission : Entered emailID as: s@gmail.com
+2020-04-26 17:38:10,200 :INFO : test_formSubmission : Entered first name as: Kumar
+2020-04-26 17:38:10,200 :INFO : test_formSubmission : Entered first name as: Kumar
+2020-04-26 17:38:10,280 :INFO : test_formSubmission : Entered password as: das@31
+2020-04-26 17:38:10,280 :INFO : test_formSubmission : Entered password as: das@31
+2020-04-26 17:38:10,364 :INFO : test_formSubmission : Entered emailID as: s@gmail.com
+2020-04-26 17:38:10,364 :INFO : test_formSubmission : Entered emailID as: s@gmail.com
+2020-04-26 17:54:03,023 :INFO : test_e2e : Navigated to products page
+2020-04-26 17:54:03,039 :INFO : test_e2e : Got all products displayed
+2020-04-26 17:54:08,598 :INFO : test_e2e : Clicked purchase the product button
+2020-04-26 20:21:40,497 :INFO : test_formSubmission : Entered first name as: Kumar
+2020-04-26 20:21:40,595 :INFO : test_formSubmission : Entered password as: ikbf80
+2020-04-26 20:21:40,720 :INFO : test_formSubmission : Entered emailID as: kl@opi.com

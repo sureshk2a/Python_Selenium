@@ -1,0 +1,11 @@
+Command line browser invoke:
+    cmd:
+    //browser invoke
+    py.test testname --browser_name firefox
+    py.test testname --browser_name chrome
+    How to:
+    Add pytest_addoption in conftest.py which accepts browser name param
+    to get it inside setup -> browser_name = request.config.getoption("browser_name")
+    //report greneration
+    pytest test_Homepage --html=report.html
+
